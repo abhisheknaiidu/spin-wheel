@@ -21,9 +21,8 @@ useEffect(() => {
     if(selectedItem !== null) {
         const date = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
         const spinIndex = selectedItem-2 >= 0 ? selectedItem-2 : items.length - 1 - selectedItem  - 1;
-        // if(selectedItem == 0) 
-        console.log(selectedItem);
-        console.log(items[spinIndex]);
+        // console.log(selectedItem);
+        // console.log(items[spinIndex]);
         const newRow = { web_client: "nads pwa", timestamp: date, spin_result_index: spinIndex };
         const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
         const appendSpreadsheet = async (newRow) => {
