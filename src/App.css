@@ -1,10 +1,10 @@
 :root {
-    --wheel-font: 'Lato', 'Quicksand', sans-serif;
+    --wheel-font: 'Fira Code', sans-serif;
     --wheel-size: 400px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #65203A;
-    --neutral-color: white;
+    --neutral-color: #E5E5E5;;
     --PI: 3.14159265358979;
     --nb-item: 8;
     --item-nb: 0;
@@ -14,6 +14,33 @@
     --reset-duration: 0.25s;
   }
   
+  .App {
+    font-family: var(--wheel-font);
+    text-align: center;
+  }
+
+  .info {
+    position: absolute;
+    width: 580px;
+    height: 140px;
+    left: 450px;
+    top: 524px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+
+  .info-des {
+    padding : 30px;
+  }
+
+  .getHelp {
+    position: absolute;
+    left: 650px;
+    top: 694px;
+    font-size: 14px;
+  }
+
   .wheel-upper {
     position: absolute;
     width: 60px;
