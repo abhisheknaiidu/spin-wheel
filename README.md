@@ -1,6 +1,6 @@
 <h1 align="center"> Spin Wheel 🎡 </h1>
 
-[Spin Wheel](), a web app that allows the user to spin by tapping on center, and get the reward mentioned on the segment of wheel where it stops. Also storing the informations in a google sheet, using [google sheets API](https://developers.google.com/sheets/api)
+[Spin Wheel](), a web app that allows the user to spin by tapping on center, and get the reward mentioned on the segment of wheel where it stops. Also storing all the information in a google sheet, using [google sheets API](https://developers.google.com/sheets/api)
 
 **Just Spin and Win Prizes** 😉
 
