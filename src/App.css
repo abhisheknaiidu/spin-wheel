@@ -1,6 +1,6 @@
 :root {
     --wheel-font: 'Fira Code', sans-serif;
-    --wheel-size: 400px;
+    --wheel-size: 300px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #65203A;
@@ -13,10 +13,20 @@
     --spinning-duration: 4s;
     --reset-duration: 0.25s;
   }
+
+  @media only screen and (max-width: 600px) {
+  .App {
+    width: 100vw;
+  }
+}
   
   .App {
     font-family: var(--wheel-font);
     text-align: center;
+    width: 360px;
+    height: auto;
+    margin: auto;
+    background-color: #FFFFFF;
   }
 
   .info {
@@ -128,7 +138,7 @@
     transform: rotate(calc(var(--nb-turn) * 360deg + (-360deg * var(--selected-item) / var(--nb-item, 1))));
   }
   
-  /* Centre de la roue = rond blanc au centre */
+  /* center of the wheel = white circle in the center */
   .wheel::after {
     display: block;
     position: absolute;
@@ -143,27 +153,27 @@
     border-radius: 50%;
   }
   
-  /* Element sur la roue */
+  /* Element on the wheel */
   .wheel-item {
     display: block;
     position: absolute;
     box-sizing: border-box;
   
-    /* position de l'item */
+    /* item position */
     top: 50%;
     left: 50%;
     width: 50%;
     transform-origin: center left;
     transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
   
-    /* texte */
+    /* text */
     color: var(--neutral-color);
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
   }
   
-  /* Background de l'élément = triangle rose plus clair */
+  /* Element background */
   .wheel-item:before {
     content: ' ';
     display: block;

@@ -36,6 +36,7 @@ useEffect(() => {
           
               const sheet = doc.sheetsById[SHEET_ID];
               const result = await sheet.addRow(newRow);
+              console.log(newRow, items[spinIndex]);
             } catch (e) {
               console.error('Error: ', e);
             }
@@ -44,6 +45,76 @@ useEffect(() => {
     }
 }, [selectedItem])
 
+useEffect(() => {
+    dragRotate();
+  }, []);
+
+const dragRotate = () => {
+    var init,
+      rotate,
+      start,
+      stop,
+      active = false,
+      angle = 0,
+      rotation = 0,
+      startAngle = 0,
+      center = {
+        x: 0,
+        y: 0,
+      },
+      R2D = 180 / Math.PI,
+      d = document.getElementById("draggable"),
+      rot = document.getElementById("rotate");
+  
+    init = function () {
+      rot.addEventListener("mousedown", start, false);
+      d.addEventListener("mousemove", function (event) {
+        if (active === true) {
+          event.preventDefault();
+          rotate(event);
+        }
+      });
+      d.addEventListener("mouseup", function (event) {
+        event.preventDefault();
+        stop(event);
+      });
+    };
+  
+    start = function (e) {
+      e.preventDefault();
+      var bb = this.getBoundingClientRect(),
+        t = bb.top,
+        l = bb.left,
+        h = bb.height,
+        w = bb.width,
+        x,
+        y;
+      center = {
+        x: l + w / 2,
+        y: t + h / 2,
+      };
+      x = e.clientX - center.x;
+      y = e.clientY - center.y;
+      startAngle = R2D * Math.atan2(y, x);
+      return (active = true);
+    };
+  
+    rotate = function (e) {
+      e.preventDefault();
+      var x = e.clientX - center.x,
+        y = e.clientY - center.y,
+        deg = R2D * Math.atan2(y, x);
+      rotation = deg - startAngle;
+      return (rot.style.transform = `rotate(${angle + rotation}deg)`);
+    };
+  
+    stop = function () {
+      angle += rotation;
+      return (active = false);
+    };
+  
+    init();
+  };
 
 
     const wheelVars = {
@@ -55,17 +126,21 @@ useEffect(() => {
       }
     return (
         <>
-        <div className="wheel-top">
+        {/* <div className="wheel-top">
             <div className="wheel-upper"></div>
             <div className="wheel-triangle"></div>
-        </div>
+        </div> */}
         <div className="wheel-container">
+        <div id="draggable">
+        <div id="rotate">
         <div className={`wheel ${spinning}`} style={wheelVars} onClick={handleItem}>
           {items.map((item, index) => (
             <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
               {item}
             </div>
           ))}
+        </div>
+        </div>
         </div>
       </div>
       </>
