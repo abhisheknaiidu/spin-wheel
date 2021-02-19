@@ -2,6 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import wheelPin from "../assets/pin.svg";
 
 export const Spinner = ({ items }) => {
     const [selectedItem, setSelectedItem] = useState(null);
@@ -130,6 +131,9 @@ const dragRotate = () => {
             <div className="wheel-upper"></div>
             <div className="wheel-triangle"></div>
         </div> */}
+        <div className="flex-column">
+        <div className="flex-column spin-wheel">
+        <img src={wheelPin} alt="wheelPin" className="wheelPin"/>
         <div className="wheel-container">
         <div id="draggable">
         <div id="rotate">
@@ -139,6 +143,8 @@ const dragRotate = () => {
               {item}
             </div>
           ))}
+        </div>
+        </div>
         </div>
         </div>
         </div>

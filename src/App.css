@@ -27,6 +27,7 @@
     height: auto;
     margin: auto;
     background-color: #FFFFFF;
+    align-items: center;
   }
 
   .info {
@@ -40,6 +41,21 @@
     font-size: 10px;
   }
 
+  .wheelPin {
+    z-index: 1440;
+    position: relative;
+    top: 20px;
+  }
+
+  .wheelPin-tilted {
+    animation: pinRotate 0.3s infinite;
+  }
+
+  .header {
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+
   .info-des {
     padding : 30px;
   }
@@ -51,12 +67,21 @@
     font-size: 14px;
   }
 
-  .wheel-upper {
+  .spin-wheel {
+    align-items: center;
+    position: relative;
+    width: 360px;
+    height: 500px;
+    background-color: #F7F6F3;
+  }
+  
+
+  /* .wheel-upper {
     position: absolute;
     width: 60px;
     height: 10px;
-    left: 690.95px;
-    top: 67px;
+    left: 153.95px;
+    top: 119px;
 
     background: #FFDDA1;
     border-radius: 2px;
@@ -66,15 +91,15 @@
     position: absolute;
     width: 0;
     height: 0;
-    left: 707.18px;
-    top: 73.5px;
+    left: 169.18px;
+    top: 126.5px;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 30px solid #FFDDA1;
     z-index: 40;
-    /* background: #FFDDA1; */
-    /* transform: rotate(-180deg); */
-  }
+    background: #FFDDA1;
+    transform: rotate(-180deg);
+  } */
 
   /* Conteneur de la roue = cercle rose extérieur */
   .wheel-container {
