@@ -14,6 +14,10 @@
     --reset-duration: 0.25s;
   }
 
+  .main {
+    background-color: #F7F6F3;
+  }
+
   @media only screen and (max-width: 600px) {
   .App {
     width: 100vw;
@@ -28,17 +32,6 @@
     margin: auto;
     background-color: #FFFFFF;
     align-items: center;
-  }
-
-  .info {
-    position: absolute;
-    width: 580px;
-    height: 140px;
-    left: 450px;
-    top: 524px;
-    background: #FFFFFF;
-    border-radius: 12px;
-    font-size: 10px;
   }
 
   .wheelPin {
@@ -56,22 +49,33 @@
     padding-top: 10px;
   }
 
-  .info-des {
-    padding : 30px;
+  .info {
+    width: 320px;
+    height: 130px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    gap: 6px;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    margin: auto;
+    font-size: 13px;
   }
 
-  .getHelp {
-    position: absolute;
-    left: 650px;
-    top: 694px;
-    font-size: 14px;
+  .result-info {
+    padding: 7px;
+    font-size: 13px;
+  }
+  
+  .help {
+    padding: 27px;
+    font-size: 13px;
   }
 
   .spin-wheel {
     align-items: center;
     position: relative;
     width: 360px;
-    height: 500px;
+    height: 370px;
     background-color: #F7F6F3;
   }
   

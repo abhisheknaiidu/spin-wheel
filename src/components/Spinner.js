@@ -7,7 +7,8 @@ import wheelPin from "../assets/pin.svg";
 export const Spinner = ({ items }) => {
     const [selectedItem, setSelectedItem] = useState(null);
     const spinning = selectedItem !== null ? 'spinning' : '';
-
+    const [result, setResult] = useState('');
+ 
 
 // Config variables
 const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
@@ -24,6 +25,7 @@ useEffect(() => {
         const spinIndex = selectedItem-2 >= 0 ? selectedItem-2 : items.length - 1 - selectedItem  - 1;
         // console.log(selectedItem);
         // console.log(items[spinIndex]);
+        setResult(items[spinIndex])
         const newRow = { web_client: "nads pwa", timestamp: date, spin_result_index: spinIndex };
         const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
         const appendSpreadsheet = async (newRow) => {
@@ -131,7 +133,7 @@ const dragRotate = () => {
             <div className="wheel-upper"></div>
             <div className="wheel-triangle"></div>
         </div> */}
-        <div className="flex-column">
+        <div className="flex-column main">
         <div className="flex-column spin-wheel">
         <img src={wheelPin} alt="wheelPin" className="wheelPin"/>
         <div className="wheel-container">
@@ -148,6 +150,16 @@ const dragRotate = () => {
         </div>
         </div>
         </div>
+        <div className="result-info">
+        <p><b>And you've got {result}</b></p>
+        </div>
+        <div className="flex-column info">
+        <p><b>Spin the wheel now to get rewarded</b></p>
+        <p>Tap on Spin or rotate the wheel anti-clockwise and release to start spinning</p>
+      </div>
+      <p className="help">
+        <b>Have a question? </b><span style={{ color: "#FFDDA1"}}><b>Get Help</b></span>
+      </p>
       </div>
       </>
     )

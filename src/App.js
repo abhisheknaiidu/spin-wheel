@@ -3,7 +3,7 @@ import './App.css'
 import Header from './components/Header';
 
 function App() {
-  const rewards = ['Better luck next time!', '₹50 💸', '2X Savings', '1.5X Savings', '₹50 💸', '₹20 💸', '₹100 Cashback', '2X Savings'];
+  const rewards = ['Better luck next time!', '₹5 💸', '₹10 💸', '1.5X Savings', '₹50 💸', '₹20 💸', '₹100 Cashback', '2X Savings'];
   return (
     <div className="App">
       <Header />
