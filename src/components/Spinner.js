@@ -166,9 +166,9 @@ const dragRotate = () => {
         <div class="animation-bar">
             <span style={{width:'60%'}}></span>
           </div>
-        <div className="result-info">
+        {/* <div className="result-info">
         <p><b>And you've got {result}</b></p>
-        </div>
+        </div> */}
         <div className="flex-column info">
         <p><b>Spin the wheel now to get rewarded</b></p>
         <p>Tap on Spin or rotate the wheel anti-clockwise and release to start spinning</p>
