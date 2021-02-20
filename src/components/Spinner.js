@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import wheelPin from "../assets/pin.svg";
+// import spin from "../assets/spin.svg";
 
 export const Spinner = ({ items }) => {
     const [selectedItem, setSelectedItem] = useState(null);
@@ -108,6 +109,7 @@ const dragRotate = () => {
         y = e.clientY - center.y,
         deg = R2D * Math.atan2(y, x);
       rotation = deg - startAngle;
+      console.log(angle + rotation);
       return (rot.style.transform = `rotate(${angle + rotation}deg)`);
     };
   
@@ -126,6 +128,14 @@ const dragRotate = () => {
       };
     const handleItem = () => {
         setSelectedItem(Math.floor(Math.random() * items.length));
+        document.querySelector(".wheelPin").classList.add("wheelPin-tilted");
+        setInterval(() => {
+          document.querySelector(".wheelPin").classList.remove("wheelPin-tilted");
+        }, 4000);
+        document.querySelector(".animation-bar").classList.add("animation-progress");
+        setInterval(() => {
+          document.querySelector(".animation-bar").classList.remove("animation-progress");
+        }, 4000);
       }
     return (
         <>
@@ -150,6 +160,12 @@ const dragRotate = () => {
         </div>
         </div>
         </div>
+        <svg width="161" height="31" viewBox="0 0 161 31" xmlns="http://www.w3.org/2000/svg">
+        <path className="bar" d="M130.5 8.5C66.5 30.5 17.3333 12.3333 0 2.5C26 35.7 101.5 32.8333 136 23L140.5 31L161 2.5L126 0L130.5 8.5Z" fill="#BBBBBB"/>
+        </svg>
+        <div class="animation-bar">
+            <span style={{width:'60%'}}></span>
+          </div>
         <div className="result-info">
         <p><b>And you've got {result}</b></p>
         </div>
