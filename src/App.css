@@ -161,7 +161,7 @@
     transform: rotate(-180deg);
   } */
 
-  /* Conteneur de la roue = cercle rose extérieur */
+  /* Wheel container = outer deep pink circle */
   .wheel-container {
     display: block;
     position: relative;
@@ -176,8 +176,7 @@
     user-select: none;
     font-size: 12px;
   }
-  
-  /* Triangle de sélection = 1 rose +  1 blanc */
+  /* Selection triangle = 1 pink + 1 white */
   .wheel-container::before,
   .wheel-container::after {
     content: '';
@@ -202,7 +201,7 @@
     border-right-color: var(--neutral-color);
   } */
   
-  /* Roue */
+  /* Wheel */
   .wheel {
     display: block;
     position: relative;
@@ -224,7 +223,7 @@
     transform: rotate(calc(var(--nb-turn) * 360deg + (-360deg * var(--selected-item) / var(--nb-item, 1))));
   }
   
-  /* center of the wheel = white circle in the center */
+  /* center of the wheel = yellow circle in the center */
   .wheel::after {
     display: block;
     position: absolute;
@@ -274,18 +273,11 @@
     padding-left: 0px;
     opacity: 0.056;
   
-    /* 
-      Largeur du triangle
-      Je ne sais pas pourquoi j'ai besoin d'ajouter 
-        " + var(--wheel-size) / 2 " dans slice-max-width  ==> donne 2.PI.R + R
-      mais globalement ca marche a peu près bien 
-      TODO: A étudier 
-    */
     --slice-max-width: calc(var(--PI) * var(--wheel-size) + var(--wheel-size) / 2);
     --slice-width: calc((var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing));
     border: solid transparent calc(var(--slice-width) / 2);
     border-left: solid transparent 0;
-    /* profondeur du triangle = du centre de la roue à la bordure = 300px / 2 */
+    /* depth of the triangle = from the center of the wheel to the edge = 300px / 2 */
     border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
   }
   
